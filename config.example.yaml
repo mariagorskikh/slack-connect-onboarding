@@ -1,0 +1,54 @@
+# Copy this file to config.yaml and fill it in.
+# config.yaml is ignored by git, so your team details stay local.
+
+channel:
+  # Placeholders: {our_company}, {customer}
+  # {customer} is lowercased, spaces removed, suffixes like Inc or LLC dropped.
+  name_pattern: "{our_company}-{customer}"
+  our_company: "acme"
+  private: true
+  # Slack allows up to 80 characters.
+  max_length: 80
+
+team:
+  # People from your workspace added to every shared channel.
+  # Use Slack handles or work emails. The skill looks up their user IDs.
+  members:
+    - "sam.rivera@acme.com"
+    - "@lee.park"
+  # Who to @mention in the welcome as the people who can help.
+  # Leave empty to mention nobody.
+  mention_in_welcome:
+    - "Sam Rivera"
+    - "Lee Park"
+
+welcome:
+  # Name or line to sign with. Leave empty for no sign off.
+  sign_off: ""
+  # Free text notes on your voice. Keep them short.
+  tone_notes: |
+    Friendly and direct. First names. One exclamation mark at most.
+    Short sentences. No buzzwords. Sound like a person, not a company.
+  # Optional booking link, used only when no call is already scheduled.
+  booking_link: "https://example.com/book"
+  min_words: 40
+  max_words: 90
+  # Optional path to a file of approved product facts (pricing, plans, features).
+  # The welcome only states facts found here or given by the user.
+  facts_file: ""
+
+sources:
+  # Where meeting notes come from:
+  # granola | fireflies | otter | zoom | google_docs | pasted
+  meeting_notes: "granola"
+  # Where the email thread comes from: gmail | pasted
+  email: "gmail"
+
+invites:
+  # slack_connect (recommended for customers) | guest
+  type: "slack_connect"
+
+posting:
+  # ui: type in the Slack app in a browser (no app footer, real @mentions)
+  # mcp: post with the Slack MCP (may add a "sent using" footer)
+  method: "ui"
