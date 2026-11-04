@@ -1,6 +1,11 @@
 # Copy this file to config.yaml and fill it in.
 # config.yaml is ignored by git, so your team details stay local.
 
+autonomy:
+  mode: autonomous        # autonomous (default): asks setup questions once, then does the whole job and reports after.
+                          # review: stops for the user's okay before each outward action (the old gates).
+  money_needs_approval: true   # always true: anything that spends money waits for the user's yes
+
 channel:
   # Placeholders: {our_company}, {customer}
   # {customer} is lowercased, spaces removed, suffixes like Inc or LLC dropped.
@@ -33,8 +38,9 @@ welcome:
   booking_link: "https://example.com/book"
   min_words: 40
   max_words: 90
-  # Optional path to a file of approved product facts (pricing, plans, features).
+  # Optional path to a file of approved product facts (features, setup steps, docs links).
   # The welcome only states facts found here or given by the user.
+  # Pricing, discounts and credits are never put in the welcome, even if listed here.
   facts_file: ""
 
 sources:
