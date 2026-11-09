@@ -46,7 +46,7 @@ welcome:
 sources:
   # Where meeting notes come from:
   # granola | fireflies | otter | zoom | google_docs | pasted
-  meeting_notes: "granola"
+  meeting_notes: "pasted"
   # Where the email thread comes from: gmail | pasted
   email: "gmail"
 
